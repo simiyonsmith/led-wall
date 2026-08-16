@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Church LED Display - Celebration Showcase</title>
     <style>
-        /* Base configuration derived from your working LED wall template */
         body, html { 
             margin: 0; 
             padding: 0; 
@@ -47,7 +46,6 @@
             box-sizing: border-box;
         }
 
-        /* Fixed Premium Glassmorphic Container */
         .ui-card {
             background: rgba(255, 255, 255, 0.08);
             -webkit-backdrop-filter: blur(14px);
@@ -61,7 +59,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
         
-        /* Modern Premium Dynamic Heading Badge */
         #heading-line {
             display: inline-block;
             font-size: 40px;
@@ -76,7 +73,6 @@
             border: 1px solid rgba(255, 215, 0, 0.35);
         }
 
-        /* High-Performance Readable Typography Layers */
         #names-line { 
             font-size: 36px; 
             font-weight: 900; 
@@ -138,129 +134,233 @@
     <script>
         const slideDuration = 2000; // 2 seconds per slide
 
-        // Background image definitions
         const bgImages = {
             wedding: "url('wedding.jpeg')",
             birthday: "url('birthday.jpeg')"
         };
 
-        // DATA REGISTRY ZONE (Completely updated registry reflecting August lists)
         const rawData = [
+            // ==================== WEDDINGS (Aug 16 - Aug 22) ====================
+            // August 16
+            { husband: "Mr ALLEN STEVE W J", wife: "Mrs ANGEL JOICE R", year: "2013", date: "16th August" },
             
-            // === BIRTHDAYS ===
-            // August 1
-            { name: "Mr THAVASINGH JOHNSON J", date: "1st August" },
-            { name: "Mrs JEYARANI B W/O BALASUNDARAM A", date: "1st August" },
-            { name: "Mr STEPHEN THANASEKAR J", date: "1st August" },
-            { name: "Mr AUGUSTUS P E", date: "1st August" },
-            { name: "Mrs JANCY RANI A", date: "1st August" },
-            { name: "Mr SURESH KUMAR S", date: "1st August" },
-            { name: "Mrs PONRANI S", date: "1st August" },
-            { name: "Mr RUBAN RANJITH S", date: "1st August" },
-            { name: "Ms DENCY JENIFER J", date: "1st August" },
+            // August 17
+            { husband: "Mr BASKARAN C", wife: "Mrs USHA RANI", year: "1990", date: "17th August" },
+            { husband: "Mr SAMUEL PETER K", wife: "Mrs HEPZIBA JEEVAMANI", year: "1998", date: "17th August" },
+            { husband: "Mr SOLOMON VINOTH KUMAR G", wife: "Mrs PREETHA PONSELVAM S", year: "2016", date: "17th August" },
+            
+            // August 18
+            { husband: "Mr RAJAKUMAR NAVARAJ C", wife: "Mrs JEYASEELI R", year: "1999", date: "18th August" },
+            { husband: "Mr SOLOMON JEBAKUMAR S", wife: "Mrs JAYAPRABHA A", year: "2016", date: "18th August" },
+            { husband: "Mr CEPHAS ARUN L", wife: "Mrs JENIPHA PRISCILLA A", year: "2021", date: "18th August" },
+            { husband: "Mr LIVINGSTON SAMUEL J", wife: "Mrs LATHA EBENEZER", year: "2021", date: "18th August" },
+            
+            // August 19
+            { husband: "Mr PONVEL PETER", wife: "Mrs JEYARANI P", year: "1988", date: "19th August" },
+            { husband: "Mr DEVARAJ K", wife: "Mrs HEPZI", year: "1994", date: "19th August" },
+            { husband: "Mr BACKIARAJ P", wife: "Mrs KANMANI B", year: "1996", date: "19th August" },
+            { husband: "Mr CHRISTOPHER", wife: "Mrs RENI C", year: "1996", date: "19th August" },
+            { husband: "Mr EDISON ARTHUR E", wife: "Mrs STELLA MABEL JANCY P", year: "1996", date: "19th August" },
+            { husband: "Mr JOHNSON C", wife: "Mrs JEYAKUMARI T", year: "1996", date: "19th August" },
+            { husband: "Mr THOMAS K", wife: "Mrs EZHIL A", year: "1998", date: "19th August" },
+            { husband: "Mr JEBAKUMAR K", wife: "Mrs KIRUBAIRANI J", year: "2004", date: "19th August" },
+            { husband: "Mr AUGUSTIN SAMUEL D", wife: "Mrs SHEELA SELVAKUMARI K", year: "2010", date: "19th August" },
+            { husband: "Mr PREM JEBAKUMAR A", wife: "Mrs BENISHA CATHERINE R", year: "2024", date: "19th August" },
+            
+            // August 20
+            { husband: "Mr MANUEL PACKIARAJ I", wife: "Mrs HEPZIBAH M PACKIARAJ", year: "1964", date: "20th August" },
+            { husband: "Mr CHARLES S", wife: "Mrs SIMIYA CHARLES", year: "1993", date: "20th August" },
+            { husband: "Mr JAYA KUMAR V", wife: "Mrs SMITH NARGEES W", year: "2001", date: "20th August" },
+            { husband: "Mr JUSTIN DEVARAJAN H", wife: "Mrs ANITHA RATHI J", year: "2001", date: "20th August" },
+            { husband: "Mr SUNIL J G M", wife: "Mrs JULIANA", year: "2004", date: "20th August" },
+            { husband: "Mr ENOCH RAJ SINGH T", wife: "Mrs KAVITHA JEBASEEI ENOCH K", year: "2008", date: "20th August" },
+            { husband: "Mr VENKATESH N", wife: "Mrs BEULAH", year: "2010", date: "20th August" },
+            { husband: "Mr MARTIN VICTOR K", wife: "Mrs DIVYA DORATHY S", year: "2015", date: "20th August" },
+            
+            // August 21
+            { husband: "Mr SANTHOSAM C", wife: "Mrs BANUMATHI SANTHOSAM", year: "1978", date: "21st August" },
+            { husband: "Mr HENRY J S", wife: "Mrs IDA VASNTHAKUMARY H", year: "1982", date: "21st August" },
+            { husband: "Mr THANGAPANDI", wife: "Mrs LATHA T", year: "1991", date: "21st August" },
+            { husband: "Mr NICKSON MOSES S", wife: "Mrs JEMILA N", year: "1997", date: "21st August" },
+            { husband: "Mr RAJENDRAN R", wife: "Mrs MOBI RAJENDRAN", year: "1997", date: "21st August" },
+            { husband: "Mr RAJA SINGH J K", wife: "Mrs PRABHA P", year: "2006", date: "21st August" },
+            { husband: "Mr RUBAN S", wife: "Mrs KINGSLI", year: "2006", date: "21st August" },
+            { husband: "Mr SAMUEL PRADEEP D", wife: "Mrs ANNIE SOPHIA DULICE P", year: "2015", date: "21st August" },
+            { husband: "Mr FERDINAND ABISHEK RAVI", wife: "Mrs CHRISTINA GANAPATHI", year: "2023", date: "21st August" },
+            
+            // August 22
+            { husband: "Mr JOSEPH A", wife: "Mrs JAYASEELI J", year: "1982", date: "22nd August" },
+            { husband: "Mr HUDSON JEBAKUMAR J", wife: "Mrs JEEVA HUDSON", year: "1991", date: "22nd August" },
+            { husband: "Mr GILTON J", wife: "Mrs BENITRA G", year: "2001", date: "22nd August" },
+            { husband: "Mr NIRMAL ARULRAJ J P", wife: "Mrs SHEEBA RANI N A", year: "2005", date: "22nd August" },
+            { husband: "Mr SAM ASIR G", wife: "Mrs WISELIN THAYA N", year: "2005", date: "22nd August" },
+            { husband: "Mr JEBADOSS S", wife: "Mrs HELEN PRABHA J", year: "2007", date: "22nd August" },
+            { husband: "Mr JHONEY RESSEL ROSE N", wife: "Mrs BEENA", year: "2007", date: "22nd August" },
+            { husband: "Mr BASKER SELVAKUMAR J", wife: "Mrs JASMINE RAJAKUMARI", year: "2016", date: "22nd August" },
+            { husband: "Mr FELIX G", wife: "Mrs VASHNI SELVA JEMIMA C", year: "2016", date: "22nd August" },
+            { husband: "Mr IVAN IMMANUEL", wife: "Mrs NANCY ISWARYA T", year: "2016", date: "22nd August" },
+            { husband: "Mr RENI KUMAR G", wife: "Mrs CYNTHIA RENIKUMAR", year: "2016", date: "22nd August" },
+            { husband: "Mr JOHN THOMAS R", wife: "Mrs JEBASHEELA B", year: "2022", date: "22nd August" },
 
-            // August 2
-            { name: "Mr BALACHANDRAN B P", date: "2nd August" },
-            { name: "Mr DEVARAJ A", date: "2nd August" },
-            { name: "Mr FRANK S", date: "2nd August" },
-            { name: "Mr LAWRENCE S", date: "2nd August" },
-            { name: "Mrs JESSIE D W/O DAVID SOLOMON I", date: "2nd August" },
-            { name: "Mrs SOPHIA PRASHANTHI S", date: "2nd August" },
-            { name: "Mrs JASMINE JENIFER S W/O SOLOMON RAJ", date: "2nd August" },
-            { name: "Mr JOSEPH NEIL A", date: "2nd August" },
-            { name: "Mrs YAMUNA L W/O LOKESH G", date: "2nd August" },
-            { name: "Mrs JENUSHMA J W/O JEBA JOEL M", date: "2nd August" },
-            { name: "Mrs GODLIN BEULA M W/O ANDROSE W", date: "2nd August" },
-            { name: "Mrs ABISHA NANCY S W/O PRINCE MAKARIOS PAUL S", date: "2nd August" },
-            { name: "Mr ALLWIN ALEN BADER S S/O SELVIN A", date: "2nd August" },
+            // ==================== BIRTHDAYS (Aug 16 - Aug 22) ====================
+            // August 16
+            { name: "Mr JOHN KARUNAKARAN D", date: "16th August" },
+            { name: "Mr SANTHANA RAJ K", date: "16th August" },
+            { name: "Mrs VASANTHAKUMARI", date: "16th August" },
+            { name: "Mr KOILRAJ J", date: "16th August" },
+            { name: "Mrs EVANGELINE R W/O RANJITH BALAN M", date: "16th August" },
+            { name: "Mr BALAJI@BENJAMIN FRANKLIN S", date: "16th August" },
+            { name: "Mr RUBAN P", date: "16th August" },
+            { name: "Mrs SELVA RANI Y W/O YOVEL GNANAPAL S", date: "16th August" },
+            { name: "Mr IMMANUEL J", date: "16th August" },
+            { name: "Mrs JASMINE ASNATH DEBORAH W/O JAISON CLEMENT A R", date: "16th August" },
+            { name: "Mrs SOWMIYA R W/O JOHNPAUL V", date: "16th August" },
+            { name: "Ms DR ADLIN SMITHA A D/O ALBERT S", date: "16th August" },
+            { name: "Mr NICKSON PREM KUMAR P", date: "16th August" },
+            { name: "Mrs JENEFER MARTIN W/O VIGESH MARCUS J", date: "16th August" },
+            { name: "Mrs JENIFA JULIET REBEKKAL W/O PRABHU G", date: "16th August" },
+            { name: "Mrs JENIPHA PRISCILLA A W/O CEPHAS ARUN L", date: "16th August" },
+            { name: "Ms JUILET REBEKAL M D/O MANICKARAJ M", date: "16th August" },
+            { name: "Mr ISSAC YESUDHAS B S/O BALRAJ K", date: "16th August" },
+            { name: "Ms SHENIKA SHALU S D/O SUNILKUMAR M", date: "16th August" },
+            { name: "Master BLESSON JOHN S S/O SAMRAJ NEEGAR", date: "16th August" },
+            { name: "Ms JOS SHERLYN A J D/O ALFRED JEBARAJ J", date: "16th August" },
+            { name: "Master JADEN DAVIDSON V S/O VETHAMANICKKAM NIKSAN D", date: "16th August" },
 
-            // August 3
-            { name: "Mrs LEELATHANAM N", date: "3rd August" },
-            { name: "Ms ROSELIN D", date: "3rd August" },
-            { name: "Mrs JOHNSY MARY D", date: "3rd August" },
-            { name: "Mr JOEL AUGUSTIN", date: "3rd August" },
-            { name: "Mrs SAGUNTHALA VINCENT", date: "3rd August" },
-            { name: "Mrs DR JASMINE SELVAKUMARI", date: "3rd August" },
-            { name: "Mr VIJAY ANAND JEYARAJ V", date: "3rd August" },
-            { name: "Mr MARK SAMUEL J", date: "3rd August" },
-            { name: "Mrs FELCIA P W/O PONRAJ J", date: "3rd August" },
-            { name: "Mr ROBERT RAJADURAI J", date: "3rd August" },
-            { name: "Ms MERLIN PENITA D/O MILROY PETER", date: "3rd August" },
-            { name: "Mrs GINSA DEVIS D W/O JOSEPH ASIR P", date: "3rd August" },
-            { name: "Mr PRADEEP KUMAR R", date: "3rd August" },
-            { name: "Mrs NEETHI JACULINE A D/O ALEXANDER PUSHPARAJ P", date: "3rd August" },
-            { name: "Mrs PRETHI CAROLINE A W/O DANIEL HENRY PAUL R", date: "3rd August" },
+            // August 17
+            { name: "Mr RATNAVELU S", date: "17th August" },
+            { name: "Mrs MENAKA GEORGE", date: "17th August" },
+            { name: "Mrs DAISY SIMON", date: "17th August" },
+            { name: "Mrs ANNAL JEBAKANI A W/O ANANDA SUNDARAM S", date: "17th August" },
+            { name: "Mrs GNANABAI NELSON R W/O RAJAKUMAR NELSON P", date: "17th August" },
+            { name: "Mr DAVID D", date: "17th August" },
+            { name: "Mr SELVIN A", date: "17th August" },
+            { name: "Mrs DELSY PAULINE JOSHUA W/O JOSHUA SAMSON", date: "17th August" },
+            { name: "Mr LAWRANCE R", date: "17th August" },
+            { name: "Mrs JEBA M W/O UTHAYAKUMAR G", date: "17th August" },
+            { name: "Mrs SWEETY MERCY", date: "17th August" },
+            { name: "Mr GODWIN GNANAMANI", date: "17th August" },
+            { name: "Mr RAVIKUMAR ABRAHAM P", date: "17th August" },
+            { name: "Mrs LEETHIYAL C W/O ABISHEK S", date: "17th August" },
+            { name: "Mr PRAVEENSON J", date: "17th August" },
+            { name: "Mrs GNANADEEPAM MANJULA A W/O JASPER J", date: "17th August" },
+            { name: "Ms ANGEL P D/O PACKIARAJ D", date: "17th August" },
+            { name: "Mr MANO JASHUVA J S/O MABEL JESSY CHANDRA I S", date: "17th August" },
+            { name: "Mr FRANKLIN M S/O MOSES N", date: "17th August" },
+            { name: "Mr VANCE MERVIN C S/O CHANDRA MOHAN G D", date: "17th August" },
+            { name: "Mr ALWYN SMITH APPADURAI S/O ADAM APPADURAI", date: "17th August" },
+            { name: "Mr ALGAIN JONATHAN PANDIAN W S/O DR. WILLIAM VASANTHA SEKAR V P V", date: "17th August" },
+            { name: "Master ALBY PAUL T P S/O PRINCE T P", date: "17th August" },
+            { name: "Ms KEZIAH ROSETTE D/O GILBERT THANGARAJ R", date: "17th August" },
 
-            // August 4
-            { name: "Ms NAGOMI SOLOMON", date: "4th August" },
-            { name: "Rev. mr. SAMUEL JOHNSON S", date: "4th August" },
-            { name: "Mr THANGARAJ T", date: "4th August" },
-            { name: "Mrs JEBA VINCENT W/O VINCENT P", date: "4th August" },
-            { name: "Mr SAM RAJ KUMAR D", date: "4th August" },
-            { name: "Mr RAMESH BABU J.C", date: "4th August" },
-            { name: "Mr BELFIN R V", date: "4th August" },
-            { name: "Mr VARUN DAVID A S/O AMBROSE", date: "4th August" },
-            { name: "Mrs EBINEZER S W/O SAMUEL JASON J", date: "4th August" },
-            { name: "Mrs JENCY FLORA J", date: "4th August" },
-            { name: "Mr REGIN PANDIAN J S/O JACOB JAWAHAR T", date: "4th August" },
+            // August 18
+            { name: "Mrs PONMANI M H", date: "18th August" },
+            { name: "Mrs ARUMAI THANGABAI W/O KUTTINADAN C", date: "18th August" },
+            { name: "Mr SELVENDRAN R", date: "18th August" },
+            { name: "Mr VELLADURAI PAULRAJ K", date: "18th August" },
+            { name: "Mr MANUEL JOHNSON V P V", date: "18th August" },
+            { name: "Mr RAJA PRATHAP SHING S H/O JASLIN RAJASEELI R", date: "18th August" },
+            { name: "Mr VIJAYAKUMAR SAMUEL E", date: "18th August" },
+            { name: "Mr PERKINS JONES SAMUEL S/O PREMILA JAYAKKAR", date: "18th August" },
+            { name: "Mrs JASMINE SUGANTHI W/O CHRISTPHEN PRAVIN KUMAR", date: "18th August" },
+            { name: "Mrs JAYAPRABHA A W/O SOLOMON JEBAKUMAR S", date: "18th August" },
+            { name: "Mr ISAAC DANIELRAJ G", date: "18th August" },
+            { name: "Mr JOSHINTH SURESH", date: "18th August" },
+            { name: "Mr SIMYON JEBESTION Y", date: "18th August" },
+            { name: "Ms HARIPH NITHIS PRASATH S D D/O DAVID SAMPATHKUMAR S", date: "18th August" },
+            { name: "Mr ROZAC HANNAN SAMUEL S/O ROBERT KENNEDY Z", date: "18th August" },
+            { name: "Mr JOSHVA P S/O PAUL SAMUEL I", date: "18th August" },
+            { name: "Mr SAMUVEL RAJAKUMAR I S/O RAJESWARI S", date: "18th August" },
+            { name: "Mr JEREMIAL PAUL HANS J S/O JOHN SUNDERSINGH J", date: "18th August" },
+            { name: "Ms JENILA JUDITH D/O MOSES SUTHANTHIRA KUMAR S", date: "18th August" },
+            { name: "Ms JANATE ESTHER Y D/O YOVEL GNANAPAL S", date: "18th August" },
+            { name: "Master GIFTSON JACOB S S/O SAM KUMAR C", date: "18th August" },
+            { name: "Ms VERONICA SHREE S DIL/O EBENEZER MANI", date: "18th August" },
 
-            // August 5
-            { name: "Mr SANTHOSAM V", date: "5th August" },
-            { name: "Mr MEHANATHAN S F/O SELVAKUMAR M", date: "5th August" },
-            { name: "Mrs MANGALARANI R W/O RAJAKUMAR M", date: "5th August" },
-            { name: "Mr BALASUNDARAM A", date: "5th August" },
-            { name: "Mr SELVIN J", date: "5th August" },
-            { name: "Mr AGESTES JOHN A", date: "5th August" },
-            { name: "Mr SAMUEL RAJKUMAR J", date: "5th August" },
-            { name: "Mrs PACKIALATHA I W/O ISAAC ARTHER R", date: "5th August" },
-            { name: "Mrs GNANAM VASUKI RAJAN W/O ISSAC RAJAN", date: "5th August" },
-            { name: "Mrs BERCY VIJAYASEELI", date: "5th August" },
-            { name: "Mr DAVID RAJESH", date: "5th August" },
-            { name: "Mr JACKSON SATHISH KUMAR S/O PAULRAJ T", date: "5th August" },
-            { name: "Mr DANIEL ABRAHAM G S/O GNANADURAI S", date: "5th August" },
-            { name: "Ms GINAA PAULINE V D/O VIJAYA RAGHAVAN C", date: "5th August" },
-            { name: "Ms SHIMONA S D/O STEPHEN R", date: "5th August" },
+            // August 19
+            { name: "Mr AMIRTHAM D S", date: "19th August" },
+            { name: "Mrs HEPSIBHA SUGIRTHA MALAR", date: "19th August" },
+            { name: "Mr EBENEZER GANDHI D", date: "19th August" },
+            { name: "Mrs POORNAM M W/O MANUEL K", date: "19th August" },
+            { name: "Mr SELVARAJ S", date: "19th August" },
+            { name: "Mr KENNADY J", date: "19th August" },
+            { name: "Mr CHRISTOPHER SAMDOSS H/O BRIGTHY KIRUBHA", date: "19th August" },
+            { name: "Mr REUBAN GNANASIGAMANI T H/O BERCY VIJAYASEELI", date: "19th August" },
+            { name: "Mr NIJASTHA L", date: "19th August" },
+            { name: "Mr BELSON J S/O STELLA J", date: "19th August" },
+            { name: "Mr BENSON HEBREW DENVER S/O STANLEY SATHEESH KUMAR J", date: "19th August" },
+            { name: "Ms ANITHA STELLA L D/O LAZAR A", date: "19th August" },
+            { name: "Mr MOSES T S/O THIRAVIAM M", date: "19th August" },
+            { name: "Ms VENCY A D/O ARUL RAJ N", date: "19th August" },
+            { name: "Ms SHAREN MIRAKLIN S D/O STALIN K", date: "19th August" },
+            { name: "Ms SMITHA KENNETH A D/O ARULRAJ DEVADOSS S", date: "19th August" },
+            { name: "Mr ALFIE A S/O ANAND BABU G", date: "19th August" },
+            { name: "Mr PAUL NEHEMIAH A S/O ARUL SAMYDHASS", date: "19th August" },
+            { name: "Master ARVIN KIRUBAKAR L S/O LAWRENCE S", date: "19th August" },
+            { name: "Ms KRISTA KEERTHANAI D/O LAWRENCE S", date: "19th August" },
+            { name: "Ms JESLYN SALLIE D/O JOHN PAKIARAJ K", date: "19th August" },
 
-            // August 6
-            { name: "Mr RAJENDRAN P", date: "6th August" },
-            { name: "Mrs PRISCILLA SUNDARY T W/O WILFRED JEBARAJ T", date: "6th August" },
-            { name: "Mrs RATHANA CHRISTY V W/O VIJAYARAJ S", date: "6th August" },
-            { name: "Mrs SHANTHI LEELE PUSHPAM W/O JABAKAR JOHNSON T", date: "6th August" },
-            { name: "Mr DR. WILLIAM VASANTHA SEKAR V P V", date: "6th August" },
-            { name: "Mrs JEBA K D/O JEYA RANI K", date: "6th August" },
-            { name: "Mr GIPIYON P S/O PARAMANANTHAM Y", date: "6th August" },
-            { name: "Mrs ANGELA DORCAS J W/O ARUN J", date: "6th August" },
-            { name: "Mr PRATAB JEBAKUMR J", date: "6th August" },
-            { name: "Mrs SWEETY MIRANDA A W/O SAMUEL ABRHAM D", date: "6th August" },
-            { name: "Mr ALLEN A K", date: "6th August" },
-            { name: "Mr NELSON J S/O GILDA J", date: "6th August" },
-            { name: "Mr JEWIN SAMSON K S/O KIBSON DANIEL S", date: "6th August" },
+            // August 20
+            { name: "Mrs JOY ELIZABETH M/O PRABAKAR C", date: "20th August" },
+            { name: "Mrs PAPPA S", date: "20th August" },
+            { name: "Mrs SELVI REBECCA VICTORIA W/O DAVID JOHN JEBASINGH H", date: "20th August" },
+            { name: "Mrs SWEETY M W/O MATHIALAGAN M", date: "20th August" },
+            { name: "Mr JASPER JOHN PAUL", date: "20th August" },
+            { name: "Mrs VASANTHI CHITHIRAIRAJ W/O CHITHIRAI RAJ J", date: "20th August" },
+            { name: "Mr EDISON G", date: "20th August" },
+            { name: "Mrs SHAILA KANI MOZHI", date: "20th August" },
+            { name: "Mrs SANDHYA S W/O PRAVEEN KUMAR M", date: "20th August" },
+            { name: "Mr VICTOR SELVARAJ S S/O SAMUVEL THAVEETHU", date: "20th August" },
+            { name: "Mr JERIL DANNY S/O MALARVIZHI E", date: "20th August" },
+            { name: "Mr SAJU C J S/O JAYAKUMAR C", date: "20th August" },
+            { name: "Ms JOANNA JERIN R D/O JOSEPHINE SHIRLEY REGINA J", date: "20th August" },
+            { name: "Mr JASON PERSLEY J S/O JASPER JOHN PAUL", date: "20th August" },
+            { name: "Master JUDSON SAMUEL J S/O JUSTIN PETER I", date: "20th August" },
+            { name: "Ms SHARON ALYSSA D/O SANTHOSH S", date: "20th August" },
+            { name: "Ms AMELIA GIANNA GD/O AMY JEMIMA C", date: "20th August" },
+            { name: "Master JOHN JACINTO S/O PRINCE ROBERTSON SMITH", date: "20th August" },
+            { name: "Ms ZARAH D/O MARY", date: "20th August" },
+            { name: "Ms MIANNA GIFT RINGAL D/O RINGEL EBENEZER N", date: "20th August" },
 
-            // August 7
-            { name: "Mrs KAMALA SIMEON", date: "7th August" },
-            { name: "Mr JEYAKUMAR D", date: "7th August" },
-            { name: "Mr JOHN ROSE A", date: "7th August" },
-            { name: "Mr YOVAN PATTURAJA M", date: "7th August" },
-            { name: "Mr ARAVENDHAN A", date: "7th August" },
-            { name: "Mrs SUDHA K", date: "7th August" },
-            { name: "Mrs SELVARANI D", date: "7th August" },
-            { name: "Mrs ARUMAI MARY AUGUSTA S J W/O JAYABAL S", date: "7th August" },
-            { name: "Mrs MERCY AUGESTINA P D/O JEYASELVI P", date: "7th August" },
-            { name: "Mr JESTINE PRABU E", date: "7th August" },
+            // August 21
+            { name: "Mrs VIJAYARANI SUSILA W/O SESSION RAJA", date: "21st August" },
+            { name: "Mrs GNANAPUSHPAM A W/O ANTONY MUTHU M", date: "21st August" },
+            { name: "Mr MUTHURAJ EDWIN D", date: "21st August" },
+            { name: "Mr AUGUSTIN GNANASEKAR", date: "21st August" },
+            { name: "Mr RAJKUMAR J", date: "21st August" },
+            { name: "Mr EVEREST JACOB K", date: "21st August" },
+            { name: "Mrs GLORY V W/O SAM ASIR JELL R", date: "21st August" },
+            { name: "Mr SUNDAR SINGH J", date: "21st August" },
+            { name: "Mr JAYARAJ L", date: "21st August" },
+            { name: "Mr MOSES AMAL DASS J S/O JOHNSON KOIL RAJAN R D", date: "21st August" },
+            { name: "Mr JAGARATCHAGAN R S/O RAVI D", date: "21st August" },
+            { name: "Mr EDWIN DAVID P S/O PRINCE SOLOMON D", date: "21st August" },
+            { name: "Mrs AUGUSTA A W/O ALLWIN I", date: "21st August" },
+            { name: "Mr AKASH JEBIN S/O MUTHURAJ J", date: "21st August" },
+            { name: "Mr JERIEL GIDEON S S/O SOLOMEN THINNAKER DEVEVARAM", date: "21st August" },
+            { name: "Mr JOHN PRABHU G S/O GNANARAJ J", date: "21st August" },
+            { name: "Ms SHERLIN KEZIA N A D/O SHERLIN KEZIA N A", date: "21st August" },
+            { name: "Master INIYAN DARIUS S/O STEPHEN DHILIP SUNDAR R", date: "21st August" },
 
-            // August 8
-            { name: "Mr KANAGARAJ T", date: "8th August" },
-            { name: "Mr STANLEY CHARLES", date: "8th August" },
-            { name: "Mrs ANBU SANTHAM D W/O JOSEPH KUMAR L", date: "8th August" },
-            { name: "Mr ALEX NIRMAL SINGH S", date: "8th August" },
-            { name: "Ms SHIREEN COX D/O DR SPURGEON COX", date: "8th August" },
-            { name: "Mrs CYNTHIA RENIKUMAR W/O RENI KUMAR G", date: "8th August" },
-            { name: "Mrs RACHEL ELIZABETH W/O STALIN G", date: "8th August" },
-			
-			            // === WEDDINGS ===
-            { husband: "Mr EARNEST PUSHPANATHAN J", wife: "Mrs MANONMANI K", year: "1998", date: "5th August" },
-            { husband: "Mr RAJENDRAN P", wife: "JEBA LEELA R", year: "1955", date: "6th August" },
-            { husband: "Mr LUCIAN BERNARD ISAAC", wife: "Mrs JASMINE LUCIAN ISAAC", year: "1987", date: "6th August" }
+            // August 22
+            { name: "Mrs AGASTI BAI G", date: "22nd August" },
+            { name: "Mrs SELVI S", date: "22nd August" },
+            { name: "Mr PAULDOSS S", date: "22nd August" },
+            { name: "Mrs SELVAMANI A", date: "22nd August" },
+            { name: "Mr AUGUSTIN I S/O SAROJINIAMMAL", date: "22nd August" },
+            { name: "Mr SELVAKUMAR A", date: "22nd August" },
+            { name: "Mrs SHEELA ANAND W/O ANAND PETER", date: "22nd August" },
+            { name: "Mr DAVIDSON G", date: "22nd August" },
+            { name: "Mrs JANSI D W/O JEBASTIN PATTURAJ D", date: "22nd August" },
+            { name: "Mrs JANCY RANI G", date: "22nd August" },
+            { name: "Mr ANANDRAJ M", date: "22nd August" },
+            { name: "Mr JEBASELAN RAJKUMAR S/O JONES BARNABASS", date: "22nd August" },
+            { name: "Mr SYLVANUS PRITHIM SUGANTH S", date: "22nd August" },
+            { name: "Mr JEBARAJ SAMUEL DORAI D", date: "22nd August" },
+            { name: "Ms ANGEL D/O RENI C", date: "22nd August" },
+            { name: "Ms CATHERINE BHAGYASHREE R D/O RAJA JOHN C", date: "22nd August" },
+            { name: "Mr AERONE A S/O ABRAHAM IMMANUEL G", date: "22nd August" },
+            { name: "Mr JOEL RICHARD R S/O RAMESH KUMAR J", date: "22nd August" }
         ];
 
         let currentIndex = 0;
